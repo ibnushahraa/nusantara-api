@@ -1,6 +1,6 @@
 {
   "name": "nusantara-api",
-  "version": "0.1.0-beta",
+  "version": "0.1.1-beta",
   "description": "🇮🇩 Lightweight library untuk data wilayah Indonesia (Provinsi, Kabupaten, Kecamatan, Kelurahan)",
   "main": "src/index.js",
   "module": "src/index.mjs",
@@ -45,11 +45,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/nusantara-api.git"
+    "url": "https://github.com/ibnushahraa/nusantara-api.git"
   },
-  "homepage": "https://github.com/yourusername/nusantara-api",
+  "homepage": "https://github.com/ibnushahraa/nusantara-api",
   "bugs": {
-    "url": "https://github.com/yourusername/nusantara-api/issues"
+    "url": "https://github.com/ibnushahraa/nusantara-api/issues"
   },
   "devDependencies": {
     "jest": "^29.7.0"
