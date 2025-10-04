@@ -3,7 +3,7 @@ test/
 examples/
 coverage/
 .github/
-.claude/
+
 
 # Config files
 .gitignore
