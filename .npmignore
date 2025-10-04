@@ -1,0 +1,23 @@
+# Development files
+test/
+examples/
+coverage/
+.github/
+.claude/
+
+# Config files
+.gitignore
+.npmignore
+jest.config.js
+
+# Documentation
+CONTRIBUTING.md
+CHANGELOG.md
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store

@@ -1,0 +1,76 @@
+{
+  "name": "nusantara-api",
+  "version": "1.0.0",
+  "description": "🇮🇩 Lightweight library untuk data wilayah Indonesia (Provinsi, Kabupaten, Kecamatan, Kelurahan)",
+  "main": "src/index.js",
+  "module": "src/index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs",
+      "require": "./src/index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "files": [
+    "src/",
+    "index.d.ts",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "indonesia",
+    "wilayah",
+    "region",
+    "province",
+    "kabupaten",
+    "kecamatan",
+    "kelurahan",
+    "nusantara",
+    "desa",
+    "kota",
+    "autocomplete",
+    "search"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nusantara-api.git"
+  },
+  "homepage": "https://github.com/yourusername/nusantara-api",
+  "bugs": {
+    "url": "https://github.com/yourusername/nusantara-api/issues"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/data/**"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  }
+}
