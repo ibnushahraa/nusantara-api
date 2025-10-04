@@ -1,10 +1,10 @@
-# Examples
+# Contoh Penggunaan
 
-Collection of example scripts demonstrating how to use Nusantara API.
+Kumpulan contoh script untuk menggunakan Nusantara API.
 
-## Running Examples
+## Cara Menjalankan
 
-### Node.js Examples (CommonJS)
+### Contoh Node.js (CommonJS)
 
 ```bash
 cd examples
@@ -14,7 +14,7 @@ node hierarchical.js
 node express-api.js
 ```
 
-### ES Modules Example
+### Contoh ES Modules
 
 ```javascript
 // example.mjs
@@ -29,7 +29,7 @@ console.log(aceh);
 node example.mjs
 ```
 
-### TypeScript Example
+### Contoh TypeScript
 
 ```typescript
 // example.ts
@@ -40,60 +40,62 @@ const result: Wilayah | null = wilayah.findById('11');
 console.log(result);
 ```
 
-## Available Examples
+---
+
+## Daftar Contoh
 
 ### 1. basic.js
-Basic usage examples (CommonJS):
-- Find wilayah by ID
-- Get nama by kode
-- Get all provinces
-- Handle invalid IDs
+Contoh penggunaan dasar:
+- Cari wilayah berdasarkan kode
+- Ambil nama wilayah
+- Ambil semua provinsi
+- Menangani kode yang tidak valid
 
 ```bash
 node basic.js
 ```
 
 ### 2. search.js
-Search and autocomplete examples:
-- Search by nama
-- Case-insensitive search
-- Cached search (performance)
-- Handle empty queries and no results
+Contoh pencarian dan autocomplete:
+- Pencarian berdasarkan nama
+- Pencarian case-insensitive
+- Pencarian dengan cache (lebih cepat)
+- Menangani query kosong dan hasil tidak ditemukan
 
 ```bash
 node search.js
 ```
 
 ### 3. hierarchical.js
-Hierarchical navigation examples:
-- Navigate provinsi → kabupaten → kecamatan → kelurahan
-- Get children by parent kode
-- Get statistics by level
-- Full hierarchy tree navigation
+Contoh navigasi hierarki wilayah:
+- Navigasi provinsi → kabupaten → kecamatan → kelurahan
+- Ambil wilayah anak berdasarkan kode parent
+- Ambil statistik berdasarkan level
+- Navigasi pohon hierarki lengkap
 
 ```bash
 node hierarchical.js
 ```
 
 ### 4. express-api.js
-Complete REST API with Express.js:
-- GET `/provinces` - Get all provinces
-- GET `/search?q=query` - Search wilayah
-- GET `/wilayah/:kode` - Get by kode
-- GET `/kabupaten/:provinceKode` - Get kabupaten
-- And more...
+REST API lengkap dengan Express.js:
+- `GET /provinces` - Ambil semua provinsi
+- `GET /search?q=query` - Cari wilayah
+- `GET /wilayah/:kode` - Ambil berdasarkan kode
+- `GET /kabupaten/:provinceKode` - Ambil kabupaten
+- Dan lainnya...
 
-**Install dependencies:**
+**Install dependensi:**
 ```bash
 npm install express
 ```
 
-**Run:**
+**Jalankan:**
 ```bash
 node express-api.js
 ```
 
-**Test:**
+**Test API:**
 ```bash
 curl http://localhost:3000/provinces
 curl http://localhost:3000/search?q=jakarta&limit=5
@@ -101,16 +103,16 @@ curl http://localhost:3000/wilayah/11
 ```
 
 ### 5. react-app.jsx
-React components (React 18+):
-- `WilayahSelector` - Cascading dropdown component
-- `WilayahAutocomplete` - Autocomplete search component
+Component React (React 18+):
+- `WilayahSelector` - Component dropdown bertingkat
+- `WilayahAutocomplete` - Component autocomplete search
 
-**Features:**
+**Fitur:**
 - ✅ Support React hooks (useState, useEffect, useMemo)
-- ✅ Optimized re-rendering
-- ✅ TypeScript support via index.d.ts
+- ✅ Optimasi re-rendering
+- ✅ Support TypeScript via index.d.ts
 
-**Usage:**
+**Cara Pakai:**
 ```jsx
 import { WilayahSelector } from './examples/react-app';
 
@@ -120,17 +122,17 @@ function App() {
 ```
 
 ### 6. vue-app.vue
-Vue 3 components:
-- `WilayahSelector.vue` - Cascading dropdown component
-- `WilayahAutocomplete.vue` - Autocomplete search component
+Component Vue 3:
+- `WilayahSelector.vue` - Component dropdown bertingkat
+- `WilayahAutocomplete.vue` - Component autocomplete search
 
-**Features:**
+**Fitur:**
 - ✅ Vue 3 Composition API
 - ✅ Reactive state management
 - ✅ Scoped styles
-- ✅ TypeScript support
+- ✅ Support TypeScript
 
-**Usage:**
+**Cara Pakai:**
 ```vue
 <script setup>
 import WilayahSelector from './vue-components/WilayahSelector.vue';
@@ -141,54 +143,144 @@ import WilayahSelector from './vue-components/WilayahSelector.vue';
 </template>
 ```
 
-## Use Cases
+---
 
-### Autocomplete in Forms
+## Contoh Kasus Penggunaan
+
+### 1. Autocomplete di Form
+
 ```javascript
 const wilayah = new WilayahIndonesia();
 
-// User types "jak..."
-const suggestions = wilayah.autocomplete('jak', 5);
-// Returns: Jakarta-related regions
+// User mengetik "jak..."
+const saran = wilayah.autocomplete('jak', 5);
+// Hasil: Wilayah yang mengandung kata "jak" (Jakarta, dll)
 ```
 
-### Dropdown Cascading
-```javascript
-// User selects province
-const provinceKode = '11'; // Aceh
-const kabupatenList = wilayah.getKabupaten(provinceKode);
+### 2. Dropdown Bertingkat (Cascading)
 
-// User selects kabupaten
-const kabupatenKode = '11.01';
-const kecamatanList = wilayah.getKecamatan(kabupatenKode);
+```javascript
+// User memilih provinsi
+const kodeProvinsi = '11'; // Aceh
+const daftarKabupaten = wilayah.getKabupaten(kodeProvinsi);
+
+// User memilih kabupaten
+const kodeKabupaten = '11.01';
+const daftarKecamatan = wilayah.getKecamatan(kodeKabupaten);
+
+// User memilih kecamatan
+const kodeKecamatan = '11.01.01';
+const daftarKelurahan = wilayah.getKelurahan(kodeKecamatan);
 ```
 
-### Validation
+### 3. Validasi Kode Wilayah
+
 ```javascript
-function validateKode(kode) {
-    const region = wilayah.findById(kode);
-    return region !== null;
+function validasiKode(kode) {
+    const wilayahData = wilayah.findById(kode);
+    return wilayahData !== null;
 }
 
-console.log(validateKode('11')); // true
-console.log(validateKode('99.99')); // false
+console.log(validasiKode('11'));      // true - Aceh ada
+console.log(validasiKode('99.99'));   // false - Kode tidak valid
 ```
 
-### Display Full Address
-```javascript
-function getFullAddress(kode) {
-    const parts = kode.split('.');
-    const address = [];
+### 4. Tampilkan Alamat Lengkap
 
-    for (let i = 1; i <= parts.length; i++) {
-        const partialKode = parts.slice(0, i).join('.');
-        const nama = wilayah.getName(partialKode);
-        if (nama) address.push(nama);
+```javascript
+function alamatLengkap(kode) {
+    const bagian = kode.split('.');
+    const alamat = [];
+
+    for (let i = 1; i <= bagian.length; i++) {
+        const kodeSebagian = bagian.slice(0, i).join('.');
+        const nama = wilayah.getName(kodeSebagian);
+        if (nama) alamat.push(nama);
     }
 
-    return address.join(', ');
+    return alamat.join(', ');
 }
 
-console.log(getFullAddress('11.01.01.2001'));
+console.log(alamatLengkap('11.01.01.2001'));
 // Output: "Keude Bakongan, Bakongan, Kabupaten Aceh Selatan, Aceh"
 ```
+
+### 5. Filter Wilayah Berdasarkan Level
+
+```javascript
+// Ambil semua provinsi
+const provinsi = wilayah.getByLevel(1);
+console.log(`Total provinsi: ${provinsi.length}`); // 38
+
+// Ambil semua kabupaten/kota
+const kabupaten = wilayah.getByLevel(2);
+console.log(`Total kabupaten/kota: ${kabupaten.length}`); // 514
+
+// Ambil semua kecamatan
+const kecamatan = wilayah.getByLevel(3);
+console.log(`Total kecamatan: ${kecamatan.length}`); // 7255
+
+// Ambil semua kelurahan/desa
+const kelurahan = wilayah.getByLevel(4);
+console.log(`Total kelurahan/desa: ${kelurahan.length}`); // 83355
+```
+
+### 6. Pencarian dengan Cache
+
+```javascript
+// Pencarian pertama (membangun cache)
+console.time('First search');
+const hasil1 = wilayah.search('jakarta', 10);
+console.timeEnd('First search'); // ~50ms
+
+// Pencarian kedua (dari cache)
+console.time('Cached search');
+const hasil2 = wilayah.search('jakarta', 10);
+console.timeEnd('Cached search'); // ~1ms (lebih cepat!)
+
+// Bersihkan cache jika perlu
+wilayah.clearCache();
+```
+
+---
+
+## Tips Penggunaan
+
+1. **Inisialisasi Sekali**: Buat instance `WilayahIndonesia` sekali saja, lalu gunakan berkali-kali.
+
+```javascript
+// ✅ Baik
+const wilayah = new WilayahIndonesia();
+wilayah.findById('11');
+wilayah.findById('31');
+
+// ❌ Tidak efisien
+new WilayahIndonesia().findById('11');
+new WilayahIndonesia().findById('31');
+```
+
+2. **Gunakan Cache untuk Pencarian**: Method `search()` lebih cepat dari `autocomplete()` untuk query yang sama.
+
+3. **Batasi Hasil Autocomplete**: Gunakan parameter `limit` untuk performa lebih baik.
+
+```javascript
+// Hanya ambil 5 hasil pertama
+wilayah.autocomplete('jakarta', 5);
+```
+
+4. **Validasi Input User**: Selalu validasi kode wilayah dari user.
+
+```javascript
+const userInput = '11.01';
+if (wilayah.findById(userInput)) {
+    // Kode valid, lanjutkan
+} else {
+    // Kode tidak valid, tampilkan error
+}
+```
+
+---
+
+## Pertanyaan & Bantuan
+
+Jika ada pertanyaan atau menemukan bug, silakan buat [issue di GitHub](https://github.com/ibnushahraa/nusantara-api/issues).
