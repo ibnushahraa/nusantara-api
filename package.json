@@ -1,6 +1,6 @@
 {
   "name": "nusantara-api",
-  "version": "1.0.0",
+  "version": "0.1.0-beta",
   "description": "🇮🇩 Lightweight library untuk data wilayah Indonesia (Provinsi, Kabupaten, Kecamatan, Kelurahan)",
   "main": "src/index.js",
   "module": "src/index.mjs",
