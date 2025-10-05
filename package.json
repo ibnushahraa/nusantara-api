@@ -38,7 +38,7 @@
     "autocomplete",
     "search"
   ],
-  "author": "Your Name",
+  "author": "Syarwani (https://github.com/ibnushahraa)",
   "license": "MIT",
   "engines": {
     "node": ">=12.0.0"

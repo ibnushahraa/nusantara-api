@@ -305,14 +305,21 @@ const provinces = computed(() => wilayah.getProvinces());
 
 ## ✨ Keunggulan
 
-✅ **Ringan** - Hanya 420 KB dengan 91K+ data
+✅ **Lengkap** - Data terbaru sesuai Kepmendagri 2025 dengan 91K+ wilayah
+
+✅ **Ringan** - Hanya 420 KB (brotli compressed)
+
 ✅ **Cepat** - Pencarian O(1) untuk find by ID
-✅ **Lengkap** - Data terbaru sesuai Kepmendagri 2025
-✅ **Mudah** - API sederhana dan jelas
+
 ✅ **Modern** - Support CommonJS, ES Module, TypeScript
+
+✅ **Mudah** - API sederhana dan jelas
+
 ✅ **Fleksibel** - Bisa untuk Node.js, React, Vue, Express, dll
-✅ **Teruji** - 68 unit tests dengan 100% pass
+
 ✅ **No Dependencies** - Pure Node.js built-in modules
+
+✅ **Teruji** - 68 unit tests dengan coverage 80%
 
 ---
 
