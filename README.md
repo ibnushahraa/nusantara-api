@@ -8,7 +8,7 @@
 [![file size](https://img.shields.io/badge/size-420KB-brightgreen.svg?style=flat-square)](https://github.com/ibnushahraa/nusantara-api)
 [![data](https://img.shields.io/badge/data-91K%2B%20regions-orange.svg?style=flat-square)](https://github.com/ibnushahraa/nusantara-api)
 
-🇮🇩 **Library ringan untuk data wilayah Indonesia** - Provinsi, Kabupaten, Kecamatan, Kelurahan/Desa
+🗺️ **Library ringan untuk data wilayah Indonesia** - Provinsi, Kabupaten, Kecamatan, Kelurahan/Desa
 
 Data sesuai **Kepmendagri No 300.2.2-2138 Tahun 2025** dengan **91,162 wilayah** terupdate.
 
