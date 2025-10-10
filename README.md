@@ -241,53 +241,6 @@ app.get('/search', (req, res) => {
 app.listen(3000);
 ```
 
-### React Component
-
-Lihat file lengkap di [`examples/react-app.jsx`](examples/react-app.jsx)
-
-```jsx
-import WilayahIndonesia from 'nusantara-api';
-
-function WilayahSelector() {
-    const wilayah = new WilayahIndonesia();
-    const [selected, setSelected] = useState('');
-
-    const provinces = wilayah.getProvinces();
-
-    return (
-        <select onChange={(e) => setSelected(e.target.value)}>
-            {provinces.map(p => (
-                <option key={p.kode} value={p.kode}>{p.nama}</option>
-            ))}
-        </select>
-    );
-}
-```
-
-### Vue 3 Component
-
-Lihat file lengkap di [`examples/vue-components/WilayahSelector.vue`](examples/vue-components/WilayahSelector.vue)
-
-```vue
-<script setup>
-import { ref, computed } from 'vue';
-import WilayahIndonesia from 'nusantara-api';
-
-const wilayah = new WilayahIndonesia();
-const selected = ref('');
-
-const provinces = computed(() => wilayah.getProvinces());
-</script>
-
-<template>
-  <select v-model="selected">
-    <option v-for="p in provinces" :key="p.kode" :value="p.kode">
-      {{ p.nama }}
-    </option>
-  </select>
-</template>
-```
-
 ---
 
 ## ⚡ Performa
@@ -315,7 +268,7 @@ const provinces = computed(() => wilayah.getProvinces());
 
 ✅ **Mudah** - API sederhana dan jelas
 
-✅ **Fleksibel** - Bisa untuk Node.js, React, Vue, Express, dll
+✅ **Fleksibel** - Bisa untuk Node.js, Express, NestJS, Fastify, dll
 
 ✅ **No Dependencies** - Pure Node.js built-in modules
 
