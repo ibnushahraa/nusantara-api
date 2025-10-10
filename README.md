@@ -16,9 +16,31 @@ Data sesuai **Kepmendagri No 300.2.2-2138 Tahun 2025** dengan **91,162 wilayah**
 
 ## 📦 Instalasi
 
+### Via NPM (Untuk Node.js)
+
 ```bash
 npm install nusantara-api
 ```
+
+### Via CDN (Untuk Browser/Frontend)
+
+Tidak perlu instalasi! Langsung fetch data dari CDN.
+
+👉 **[Lihat dokumentasi CDN lengkap](https://github.com/ibnushahraa/nusantara-api/tree/cdn#readme)**
+
+```javascript
+const CDN = 'https://cdn.jsdelivr.net/gh/ibnushahraa/nusantara-api@cdn/data'
+
+// Fetch provinsi (~885 bytes)
+const provinces = await fetch(`${CDN}/provinces/index.json`).then(r => r.json())
+// Returns: [["11","Aceh"], ["12","Sumatera Utara"], ...]
+```
+
+**Keunggulan CDN:**
+- ✅ Tidak perlu install npm package
+- ✅ Ukuran file sangat kecil (76% lebih kecil)
+- ✅ Lazy loading - hanya load yang dibutuhkan
+- ✅ Global CDN - cepat di seluruh dunia
 
 ## 🚀 Cara Pakai
 
