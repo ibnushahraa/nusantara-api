@@ -102,47 +102,6 @@ curl http://localhost:3000/search?q=jakarta&limit=5
 curl http://localhost:3000/wilayah/11
 ```
 
-### 5. react-app.jsx
-Component React (React 18+):
-- `WilayahSelector` - Component dropdown bertingkat
-- `WilayahAutocomplete` - Component autocomplete search
-
-**Fitur:**
-- ✅ Support React hooks (useState, useEffect, useMemo)
-- ✅ Optimasi re-rendering
-- ✅ Support TypeScript via index.d.ts
-
-**Cara Pakai:**
-```jsx
-import { WilayahSelector } from './examples/react-app';
-
-function App() {
-  return <WilayahSelector onSelect={(w) => console.log(w)} />;
-}
-```
-
-### 6. vue-app.vue
-Component Vue 3:
-- `WilayahSelector.vue` - Component dropdown bertingkat
-- `WilayahAutocomplete.vue` - Component autocomplete search
-
-**Fitur:**
-- ✅ Vue 3 Composition API
-- ✅ Reactive state management
-- ✅ Scoped styles
-- ✅ Support TypeScript
-
-**Cara Pakai:**
-```vue
-<script setup>
-import WilayahSelector from './vue-components/WilayahSelector.vue';
-</script>
-
-<template>
-  <WilayahSelector @select="handleSelect" />
-</template>
-```
-
 ---
 
 ## Contoh Kasus Penggunaan
